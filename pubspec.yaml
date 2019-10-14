@@ -1,6 +1,6 @@
 name: adaptive_widgets
 description: A set of utilities which allow you to dynamically adapt your app to the current platform.
-version: 0.0.1
+version: 0.0.2
 author: Peter Bryant <peter@ptrbrynt.com>
 homepage: https://github.com/netsells/flutter-adaptive-widgets
 
