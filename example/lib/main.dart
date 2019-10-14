@@ -2,6 +2,8 @@ import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'home/home_widget.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,42 +13,11 @@ class MyApp extends StatelessWidget {
     return AdaptiveApp(
       title: "Adaptive App",
       home: HomeWidget(),
-      cupertinoTheme: CupertinoThemeData(),
+      cupertinoTheme: CupertinoThemeData(
+        primaryColor: Colors.red,
+        primaryContrastingColor: Colors.blue,
+      ),
       materialTheme: ThemeData.light(),
-    );
-  }
-}
-
-class HomeWidget extends StatefulWidget {
-  @override
-  _HomeWidgetState createState() => _HomeWidgetState();
-}
-
-class _HomeWidgetState extends State<HomeWidget> {
-  double _value = 0;
-  ValueChanged<double> _valueChanged;
-
-  @override
-  void initState() {
-    super.initState();
-    _valueChanged = (v) {
-      setState(() {
-        _value = v;
-      });
-    };
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AdaptiveWidget(
-      cupertinoBuilder: (_) => CupertinoSlider(
-        onChanged: _valueChanged,
-        value: _value,
-      ),
-      materialBuilder: (_) => Slider(
-        onChanged: _valueChanged,
-        value: _value,
-      ),
     );
   }
 }
