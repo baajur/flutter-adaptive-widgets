@@ -10,7 +10,7 @@ Simply add the dependency to your project's `pubspec.yaml` file:
 adaptive_widgets: ^0.0.1
 ```
 
-## Usage
+## Usage
 
 ### Adaptive Widget
 
