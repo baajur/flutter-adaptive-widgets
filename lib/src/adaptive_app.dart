@@ -8,6 +8,7 @@ class AdaptiveApp extends StatelessWidget {
   final GlobalKey<NavigatorState> navigatorKey;
   final Widget home;
   final CupertinoThemeData cupertinoTheme;
+  final CupertinoThemeData cupertinoDarkTheme;
   final ThemeData materialTheme;
   final ThemeData materialDarkTheme;
   final ThemeMode materialThemeMode;
@@ -37,6 +38,7 @@ class AdaptiveApp extends StatelessWidget {
     this.navigatorKey,
     this.home,
     this.cupertinoTheme,
+    this.cupertinoDarkTheme,
     this.materialTheme,
     this.materialDarkTheme,
     this.materialThemeMode = ThemeMode.system,
@@ -77,7 +79,9 @@ class AdaptiveApp extends StatelessWidget {
         ? CupertinoApp(
             navigatorKey: navigatorKey,
             home: home,
-            theme: cupertinoTheme,
+            theme: MediaQuery.platformBrightnessOf(context) == Brightness.dark
+                ? cupertinoDarkTheme
+                : cupertinoTheme,
             routes: routes,
             initialRoute: initialRoute,
             onGenerateRoute: onGenerateRoute,

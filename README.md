@@ -7,7 +7,7 @@ A set of utilities which allow you to dynamically adapt your app to the current 
 Simply add the dependency to your project's `pubspec.yaml` file:
 
 ```yaml
-adaptive_widgets: ^0.0.3
+adaptive_widgets: ^0.0.4
 ```
 
 ## Usage
